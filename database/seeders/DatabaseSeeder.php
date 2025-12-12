@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             LookupDataSeeder::class,
             PariwisataSeeder::class,
             BeritaSeeder::class,
+            pendudukSeeder::class
         ]);
     }
 }
