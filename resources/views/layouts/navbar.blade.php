@@ -39,7 +39,7 @@
             <a class="block px-4 py-2 hover:underline" href="/berita">Berita</a>
             <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
             <a class="block px-4 py-2 hover:underline" href="https://wa.me/6285394998504">Pengaduan</a>
-            <a class="block px-4 py-2 hover:underline" href="/login">Login</a>
+            <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
         </ul>
     </div>
 
