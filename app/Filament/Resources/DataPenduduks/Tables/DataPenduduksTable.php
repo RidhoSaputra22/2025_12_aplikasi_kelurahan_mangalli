@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\DataPenduduks\Tables;
 
+use App\Enum\JenisKelaminEnum;
 use Filament\Tables\Table;
 use Filament\Actions\Action;
 use App\Enums\CertificateStatus;
@@ -28,16 +29,23 @@ class DataPenduduksTable
                 TextColumn::make('nama_lengkap')
                     ->searchable(),
 
+                TextColumn::make('jenis_kelamin')
+                    ->searchable()
+                    ->searchable(),
+
                 TextColumn::make('created_at')
+                    ->label('Tanggal Dibuat')
                     ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->sortable(),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                SelectFilter::make('jenis_kelamin')
+                    ->label('Jenis Kelamin')
+                    ->options(JenisKelaminEnum::class),
                 Filter::make('created_from')
                     ->schema([
                         DatePicker::make('created_from')->label('Dari Tanggal'),

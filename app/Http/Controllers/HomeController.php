@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Enum\JenisKelaminEnum;
+use App\Models\BeritaDesa;
+use App\Models\AparaturDesa;
+use App\Models\DataPenduduk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,115 +14,29 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        $aparat = [
-            [
-                'nip' => '19940418 201507 2 011',
-                'nama' => 'Farizah Latief, HS, S.STP',
-                'jabatan' => 'Lurah Kelurahan Mangalli',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '19700527 200604 1 005',
-                'nama' => 'Idham Yakub, SE, MM',
-                'jabatan' => 'Sekretaris Lurah',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '',
-                'nama' => 'BHABIN KAMTIBNAS BABINSA PLKB',
-                'jabatan' => 'Bhabin Kamtibmas',
-                'image' => 'assets/default-user.jpg',
-            ],
-
-            [
-                'nip' => '19850331 201101 2 031',
-                'nama' => 'A. Kurniasih Kaharuddin, S.AB',
-                'jabatan' => 'Kasi Pemberdayaan dan Pelayanan Masyarakat',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '19700527 200604 1 005',
-                'nama' => 'Muhammad Ramli, SE',
-                'jabatan' => 'Kasi Pemerintahan',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '19721231 200701 1 057',
-                'nama' => 'Bahtiar, S.Sos',
-                'jabatan' => 'Kasi Trantib',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '19860625 200604 2 001',
-                'nama' => 'Sri Wahyuni Kusuma',
-                'jabatan' => 'Bendahara Pengeluaran Pembantu',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '',
-                'nama' => 'Syahruddin Mala',
-                'jabatan' => 'Kepala Lingkungan Allatappampang',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '',
-                'nama' => 'M. Irsyad Wahyuddin Hamid, S.Sos',
-                'jabatan' => 'Kepala Lingkungan Mangalli',
-                'image' => 'assets/default-user.jpg',
-            ],
-            [
-                'nip' => '',
-                'nama' => 'Hardianto R',
-                'jabatan' => 'Kepala Lingkungan Kalegowa',
-                'image' => 'assets/default-user.jpg',
-            ],
-        ];
+        $aparat = AparaturDesa::all();
 
         $penduduk = [
             [
-
                 'label' => 'penduduk',
-                'count' => '895',
+                'count' => DataPenduduk::count(),
             ],
             [
 
                 'label' => 'Laki laki',
-                'count' => '420',
+                'count' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::L)->count(),
             ],
             [
                 'label' => 'Perempuan',
-                'count' => '475',
+                'count' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::P)->count(),
             ],
             [
                 'label' => 'Kepala Keluarga',
-                'count' => '291',
+                'count' => DataPenduduk::distinct('no_kk')->count(),
             ],
-
         ];
 
-        $berita = [
-            [
-                'link' => '#',
-                'image' => '/assets/banner-1.jpeg',
-                'judul' => 'Kelurahan Mangalli Mengadakan Festival Budaya Tahunan',
-                'tanggal' => 'August 12, 2023',
-            ],
-            [
-                'link' => '#',
-                'image' => '/assets/banner-2.jpeg',
-                'judul' => 'Pelatihan UMKM untuk Meningkatkan Ekonomi Masyarakat',
-                'tanggal' => 'September 03, 2023'
-            ],
-            [
-                'link' => '#',
-                'image' => '/assets/banner-3.jpeg',
-                'judul' => 'Gotong Royong Membersihkan Lingkungan Desa',
-                'tanggal' => 'October 20, 2023'
-            ],
-
-
-        ];
-
+        $berita = BeritaDesa::take(3)->get();
 
         return view('welcome', compact('aparat', 'penduduk', 'berita'));
     }

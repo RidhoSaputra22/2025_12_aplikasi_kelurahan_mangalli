@@ -10,6 +10,7 @@ use Filament\Support\Icons\Heroicon;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 
@@ -37,6 +38,9 @@ class ProfilDesaPage extends Page
     {
         return $schema
             ->components([
+                FileUpload::make('logo_desa')
+                    ->image()
+                    ->columnSpanFull(),
                 TextInput::make('sub_judul')
                     ->columnSpanFull(),
                 RichEditor::make('sejarah_desa')

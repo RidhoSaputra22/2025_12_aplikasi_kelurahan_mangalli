@@ -5,7 +5,7 @@
         <div class="w-full h-full swiper swiper-banner">
             <div class="w-full h-full swiper-wrapper">
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="/assets/banner-1.jpeg" alt="" class="object-cover w-full h-full">
+                    <img src="{{ Storage::url('banner-1.jpeg') }}" alt="" class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/30 to-transparent">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-20">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="/assets/banner-2.jpeg" alt="kantor " class="object-cover w-full h-full">
+                    <img src="{{ Storage::url('banner-2.jpeg') }}" alt="kantor " class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-40">
@@ -49,7 +49,8 @@
                     </div>
                 </div>
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="/assets/banner-3.jpeg" alt="salah satu bangunan di " class="object-cover w-full h-full">
+                    <img src="{{ Storage::url('banner-3.jpeg') }}" alt="salah satu bangunan di "
+                        class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-40">
@@ -77,7 +78,7 @@
                     </div>
                 </div>
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="/assets/banner-4.jpeg" alt="kantor " class="object-cover w-full h-full">
+                    <img src="{{ Storage::url('banner-4.jpeg') }}" alt="kantor " class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-20">
@@ -159,7 +160,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center lg:order-2 content">
-                        <img src="assets/default-user.jpg" class="w-96 h-96 rounded-full bg-right"
+                        <img src="{{ Storage::url('default-user.jpg') }}" class="w-96 h-96 rounded-full bg-right"
                             alt="lurah-kelurahan-tuwung">
                     </div>
                 </div>
@@ -184,15 +185,15 @@
                     <!-- Slides -->
                     @foreach ($aparat as $item)
                         <div class="swiper-slide space-y-3 ">
-                            <img src="{{ $item['image'] }}"
+                            <img src="{{ Storage::url($item->foto) }}"
                                 class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
                                 alt="Heriyani, S.Sos">
                             <div class="space-y-1 text-center md:space-y-2">
                                 <h6 class="text-base font-semibold md:text-xl">
-                                    {{ $item['jabatan'] }}
+                                    {{ $item->jabatan }}
                                 </h6>
                                 <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    {{ $item['nama'] }}
+                                    {{ $item->nama }}
                                 </p>
                             </div>
                         </div>
@@ -306,16 +307,17 @@
                                 <div class="hidden lg:block">
                                     <a href="#" class="sequenced">
                                         <div class="relative w-full overflow-hidden rounded-xl h-96">
-                                            <img src="{{ $berita[0]['image'] }}" class="object-cover w-full h-full">
+                                            <img src="{{ Storage::url($berita[0]->gambar) }}"
+                                                class="object-cover w-full h-full">
                                             <div
                                                 class="absolute inset-0 w-full h-full bg-linear-to-br from-black/10 via-black/40 to-black/60">
                                             </div>
                                             <div class="absolute inset-x-0 bottom-0 w-full p-4 space-y-2">
                                                 <h6 class="text-2xl leading-tight text-white">
-                                                    {{ $berita[0]['judul'] }}
+                                                    {{ $berita[0]->judul }}
                                                 </h6>
                                                 <p class="text-lg font-light text-white/80">
-                                                    {{ $berita[0]['tanggal'] }}
+                                                    {{ $berita[0]->tanggal }}
                                                 </p>
                                             </div>
                                         </div>
@@ -326,16 +328,16 @@
                                 @forelse ($berita as $data)
                                     <a href="{{ $data['link'] }}" class="flex flex-row space-x-5 space-y-0 sequenced">
                                         <div class="shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                            <img src="{{ $data['image'] }}" alt="{{ $data['judul'] }}"
+                                            <img src="{{ Storage::url($data->gambar) }}" alt="{{ $data->judul }}"
                                                 class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
                                         </div>
                                         <div class="space-y-2">
                                             <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                                title="{{ $data['judul'] }}">
-                                                {{ $data['judul'] }}
+                                                title="{{ $data->judul }}">
+                                                {{ $data->judul }}
                                             </h3>
                                             <p class="font-light text-black">
-                                                {{ $data['tanggal'] }}
+                                                {{ $data->tanggal }}
                                             </p>
                                         </div>
                                     </a>
@@ -347,27 +349,29 @@
 
                             </div>
                         </div>
-                        @forelse ($berita as $data)
-                            <a href="{{ $data['link'] }}" class="flex flex-row space-x-5 space-y-0 sequenced">
-                                <div class="shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                    <img src="{{ $data['image'] }}" alt="{{ $data['judul'] }}"
-                                        class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                        <div class="hidden lg:block space-y-5">
+                            @forelse ($berita as $data)
+                                <a href="{{ $data['link'] }}" class="flex flex-row space-x-5 space-y-0 sequenced">
+                                    <div class="shrink-0 w-24 h-16 md:h-24 md:w-36">
+                                        <img src="{{ Storage::url($data->gambar) }}" alt="{{ $data->judul }}"
+                                            class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
+                                            title="{{ $data->judul }}">
+                                            {{ $data->judul }}
+                                        </h3>
+                                        <p class="font-light text-black">
+                                            {{ $data->tanggal }}
+                                        </p>
+                                    </div>
+                                </a>
+                            @empty
+                                <div class="text-start hidden lg:block">
+                                    Tidak ada berita
                                 </div>
-                                <div class="space-y-2">
-                                    <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                        title="{{ $data['judul'] }}">
-                                        {{ $data['judul'] }}
-                                    </h3>
-                                    <p class="font-light text-black">
-                                        {{ $data['tanggal'] }}
-                                    </p>
-                                </div>
-                            </a>
-                        @empty
-                            <div class="text-start hidden lg:block">
-                                Tidak ada berita
-                            </div>
-                        @endforelse
+                            @endforelse
+                        </div>
                     </div>
                 </div>
             </div>

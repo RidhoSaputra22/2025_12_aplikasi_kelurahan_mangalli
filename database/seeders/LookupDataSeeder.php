@@ -25,15 +25,6 @@ class LookupDataSeeder extends Seeder
 
 
 
-        $dataBantuan = [
-            ['nama_bantuan' => 'Bantuan Langsung Tunai (BLT)'],
-            ['nama_bantuan' => 'Bantuan Pangan Non Tunai (BPNT)'],
-            ['nama_bantuan' => 'Program Keluarga Harapan (PKH)'],
-            ['nama_bantuan' => 'Bantuan Sosial Tunai (BST)'],
-            ['nama_bantuan' => 'Bantuan Iuran BPJS Kesehatan'],
-            ['nama_bantuan' => 'Bantuan Usaha Mikro (UMKM)'],
-        ];
-        \App\Models\JenisBantuan::insert($dataBantuan);
 
         $dataStatusKeluarga = [
             ['nama_status' => 'Kepala Keluarga'],

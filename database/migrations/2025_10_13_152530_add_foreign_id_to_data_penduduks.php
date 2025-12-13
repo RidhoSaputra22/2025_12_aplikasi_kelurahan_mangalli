@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('agama_id')->nullable()->constrained('agamas');
             $table->foreignId('pendidikan_id')->nullable()->constrained('pendidikans');
             $table->foreignId('pekerjaan_id')->nullable()->constrained('pekerjaans');
-            $table->foreignId('jenis_bantuan_id')->nullable()->constrained('jenis_bantuans');
         });
     }
 

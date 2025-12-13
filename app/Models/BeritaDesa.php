@@ -14,14 +14,7 @@ class BeritaDesa extends Model
         'gambar'
     ];
 
-    public function getGambarAttribute()
-    {
-        if (!$this->attributes['gambar']) {
-            return null;
-        }
 
-        return asset('storage/' . $this->attributes['gambar']);
-    }
 
     protected static function boot()
     {

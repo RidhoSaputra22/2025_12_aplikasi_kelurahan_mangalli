@@ -19,12 +19,12 @@ class BeritaDesaForm
         return $schema
             ->components([
                 FileUpload::make('gambar')
+                    ->columnSpanFull()
+                    ->visibility('public')
                     ->disk('public')
                     ->image()
                     ->imageEditor()
                     ->imageEditorMode(2)
-                    ->columnSpanFull()
-                    ->visibility('public')
                     ->required(),
                 TextInput::make('judul')
                     ->required(),

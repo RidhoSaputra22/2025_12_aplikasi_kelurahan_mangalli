@@ -27,7 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             LookupDataSeeder::class,
-            PariwisataSeeder::class,
             BeritaSeeder::class,
             pendudukSeeder::class
         ]);

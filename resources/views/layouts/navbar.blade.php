@@ -3,7 +3,7 @@
     <!-- HEADER ATAS -->
     <div class="p-3 flex justify-between items-center gap-4">
         <div class="flex gap-3 justify-center items-center">
-            <img src="/assets/logo.png" alt="" class="h-12">
+            <img src="{{ Storage::url('logo.png') }}" alt="" class="h-12">
             <div>
                 <h1 class="text-2xl font-semibold">Kelurahan Mangalli</h1>
                 <h1 class="text-sm font-light">Sistem Informasi Kelurahan</h1>

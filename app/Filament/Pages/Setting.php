@@ -178,18 +178,7 @@ class Setting extends Page implements HasTable
                                         ->success()
                                         ->send();
                                 }),
-                            Action::make('Clear View Cache')
-                                ->color('warning')
-                                ->icon(Heroicon::OutlinedTrash)
-                                ->label('Clear View Cache')
-                                ->action(function () {
-                                    // Logic to clear the view cache
-                                    Artisan::call('view:clear');
-                                    Notification::make()
-                                        ->title('View cache cleared successfully.')
-                                        ->success()
-                                        ->send();
-                                }),
+
 
                         ])
 

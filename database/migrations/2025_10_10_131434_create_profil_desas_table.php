@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('profil_desas', function (Blueprint $table) {
             $table->id();
+            $table->string('logo_desa')->nullable();
             $table->string('nama_desa');
             $table->string('sub_judul')->nullable();
             $table->text('sejarah_desa')->nullable();
@@ -29,9 +30,12 @@ return new class extends Migration
         DB::table('profil_desas')->insert([
             'nama_desa' => 'Desa Maju',
             'sub_judul' => 'Informasi mengenai sejarah, visi, misi desa beserta lebih mengenal aparatur-aparatur desa kelurahan tuwung',
-            'sejarah_desa' => '<p>Kelurahan Tuwung merupakan salah satu kelurahan yang berada di ibukota Kabupaten Barru, sebelumnya bernama Desa Tuwung, seiring perkembangan dan kemajuan pembangunan serta terpenuhinya Persyaratan Administrasi, maka pada tahun 1981 Desa Tuwung mengubah status menjadi Kelurahan Tuwung. Perubahan status Desa Tuwung menjadi Kelurahan Tuwung pada bulan April 1981, merupakan kebijakan penting yang sangat strategis. Dengan perubahan status tersebut, maka Kepala Pemerintahan di Kelurahan Tuwung dijabat oleh seorang Lurah yang berstatus pegawai negeri sipil yaitu Bapak Hasan L. selanjutnya pada tahun 1987, diikuti pemekaran wilayah induk kelurahan. tuwung menjadi 3 (tiga) kelurahan yaitu Kelurahan Sumpang Binangae, Kelurahan Coppo, dan Kelurahan Tuwung sendiri.</p>',
-            'visi' => '<p>Menuju Desa Berbasis Digital, Inovatif dalam Mengelola Potensi Desa dengan Produk Unggulan di Sektor Perikanan dan Pariwisata Agar Terwujudnya Masyarakat yang Religius, Beradat, Mandiri dan Sejahtera</p>',
-            'misi' => '<p>Optimalisasi Peran Pemerintah Desa dalam Pelayanan kepada Masyarakat Berbasis Digital Berperan Aktif dan Menjalin Komunikasi dengan Kepemudaan, Mahasiswa dan Perguruan Tinggi dalam Berinovasi untuk Menopang Pengembangan Potensi Desa Menjaga, Memelihara, Melestarikan serta Mengembangkan Nilai-Nilai Warisan Budaya Lokal yang Berkualitas dan Berkelanjutan Meningkatkan Sumber Daya Manusia (SDM) melalui Percepatan Pembangunan dan Pengembangan di Sektor Perikanan dan Pariwisata Memperkuat Fungsi Lembaga yang Ada di Desa Pelaksanaan Pembangunan yang Berkesinambungan dan Mengedepankan Partisipasi Gotong Royong Masyarakat</p>',
+            'sejarah_desa' => '<p>Kelurahan Mangalli merupakan salah satu wilayah di Kecamatan Pallangga, Kabupaten Gowa, Sulawesi Selatan, yang sejarah namanya berakar dari cerita lisan lokal masyarakat Gowa. Meskipun detail spesifik mengenai kisah asal usul nama &quot;Mangalli&quot; tidak terdokumentasi luas secara publik, wilayah ini secara historis terkait erat dengan eksistensi Kerajaan Gowa (Kerajaan Makassar) yang merupakan salah satu kerajaan maritim terbesar di Indonesia Timur.</p><p>Sejarah Mangalli lebih banyak diturunkan melalui tradisi lisan dan pengetahuan lokal tokoh masyarakat, yang menggambarkan wilayah ini sebagai bagian dari kesatuan adat dan administrasi Kerajaan Gowa di masa lampau, sebelum menjadi kelurahan administratif di era modern.</p>',
+            'visi' => '<p> Visi yang dianut secara berjenjang hingga ke tingkat kelurahan adalah:
+                            "Kabupaten Gowa Unggul, Maju dan Berkelanjutan" (Visi periode saat ini, sebelumnya adalah
+                            "Terwujudnya Masyarakat yang Berkualitas, Mandiri dan Berdaya Saing dengan Tata Kelola
+                            Pemerintahan yang Baik").</p>',
+            'misi' => '<p style="text-align: justify;">Misi ini berfokus pada beberapa aspek pembangunan daerah yang relevan dan dilaksanakan di tingkat kelurahan melalui berbagai program kerja, antara lain:</p><p style="text-align: justify;">Meningkatkan kualitas Sumber Daya Manusia berbasis pada hak-hak dasar kesetaraan gender, nilai budaya dan agama.</p><p style="text-align: justify;">Meningkatkan pembangunan dan pengelolaan infrastruktur dan kualitas lingkungan hidup yang terencana dan terpadu.</p><p style="text-align: justify;">Meningkatkan tata kelola pemerintahan yang baik, bersih, transparan, dan akuntabel.</p>',
             'alamat' => 'Jl. Merdeka No. 1, Desa Maju',
             'kode_pos' => '12345',
             'telepon' => '021-12345678',

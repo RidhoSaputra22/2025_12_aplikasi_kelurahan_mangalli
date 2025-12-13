@@ -19,6 +19,9 @@ class AparaturDesasTable
     {
         return $table
             ->columns([
+                ImageColumn::make('foto')
+                    ->disk('public')
+                    ->label('Foto'),
                 TextColumn::make('nip')
                     ->label('NIP')
                     ->searchable(),
@@ -26,9 +29,6 @@ class AparaturDesasTable
                     ->searchable(),
                 TextColumn::make('jabatan')
                     ->searchable(),
-                ImageColumn::make('foto')
-                    ->disk('public')
-                    ->label('Foto'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
