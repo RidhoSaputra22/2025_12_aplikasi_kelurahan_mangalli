@@ -10,28 +10,49 @@
                     Berikut adalah beberapa kegiatan yang dilakukan oleh kelurahan Mangalli
                 </p>
             </h3>
+            {{ $kegiatan->links() }}
 
             <div>
-                <div class="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     @foreach ($kegiatan as $item)
-                        <div
-                            class="relative overflow-hidden rounded-lg shadow-lg
-                        {{ $item['type'] == 'video' ? 'row-span-2' : '' }}">
+                        @if ($item->type->getLabel() == 'VIDEO')
+                            <div class="relative overflow-hidden rounded-lg shadow-lg row-span-2">
 
-                            <a href="{{ $item['image'] }}" class="glightbox" data-gallery="kegiatan-gallery">
-                                <img class="w-full {{ $item['type'] == 'video' ? 'h-full' : 'h-80' }}  object-cover hover:scale-105 transition duration-200"
-                                    src="{{ $item['image'] }}" alt="{{ $item['judul'] }}" />
-                            </a>
+                                <a href="{{ Storage::url($item->file) }}" class="glightbox" data-title="{{ $item->judul }}"
+                                    data-description="{{ $item->deskripsi }}" data-desc-position="bottom">
+                                    <video class="w-full h-full  object-cover hover:scale-105 transition duration-200"
+                                        src="{{ Storage::url($item->file) }}" alt="{{ $item->judul }}" preload="metadata"
+                                        controls></video>
+                                </a>
 
-                            <div class="absolute bottom-0 bg-white w-full px-6 py-4 z-10">
-                                <h3 class="text-lg font-semibold text-gray-800">
-                                    {{ $item['judul'] }}
-                                </h3>
-                                <p class="mt-2 text-sm text-gray-600">
-                                    {{ $item['deskripsi'] }}
-                                </p>
+                                <div class="absolute bottom-0 bg-white w-full px-6 py-4 z-10">
+                                    <h3 class="text-lg font-semibold text-gray-800">
+                                        {{ $item->judul }}
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-600">
+                                        {{ $item->deskripsi }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        @else
+                            <div class="relative overflow-hidden rounded-lg shadow-lg">
+
+                                <a href="{{ Storage::url($item->file) }}" class="glightbox" data-title="{{ $item->judul }}"
+                                    data-description="{{ $item->deskripsi }}" data-desc-position="bottom">
+                                    <img class="w-full h-80  object-cover hover:scale-105 transition duration-200"
+                                        src="{{ Storage::url($item->file) }}" alt="{{ $item->judul }}" />
+                                </a>
+
+                                <div class="absolute bottom-0 bg-white w-full px-6 py-4 z-10">
+                                    <h3 class="text-lg font-semibold text-gray-800">
+                                        {{ $item->judul }}
+                                    </h3>
+                                    <p class="mt-2 text-sm text-gray-600">
+                                        {{ $item->deskripsi }}
+                                    </p>
+                                </div>
+                            </div>
+                        @endif
                     @endforeach
                 </div>
 

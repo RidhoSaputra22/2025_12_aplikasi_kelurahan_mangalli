@@ -53,7 +53,7 @@ class DataPenduduk extends Model
         return $this->belongsTo(StatusKeluarga::class);
     }
 
-    public function usiaDistribution()
+    public static function usiaDistribution()
     {
         $data = DataPenduduk::selectRaw("
         SUM(CASE WHEN usia BETWEEN 0 AND 4 THEN 1 ELSE 0 END) AS usia_0_4,

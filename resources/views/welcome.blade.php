@@ -77,37 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative w-full h-full swiper-slide">
-                    <img src="{{ Storage::url('banner-4.jpeg') }}" alt="kantor " class="object-cover w-full h-full">
-                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
-                    </div>
-                    <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-20">
-                        <div class="flex items-center h-full max-w-6xl mx-auto">
-                            <div class="space-y-8">
-                                <h1
-                                    class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words lg:text-right md:text-8xl">
-                                    pariwisata
-                                </h1>
-                                <div class="grid grid-cols-1 lg:grid-cols-2">
-                                    <div></div>
-                                    <div class="px-10 lg:px-0">
-                                        <p
-                                            class="text-xl font-light leading-snug text-center text-white md:text-2xl lg:text-right">
-                                            Temukan lokasi-lokasi menarik yang anda bisa kunjungi untuk
-                                            menemani libur pekan anda di
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center lg:justify-end">
-                                    <a href="https://kelurahantuwung.com/parawisata"
-                                        class="flex items-center justify-center px-4 py-2 space-x-2 text-lg text-white transition bg-primary border border-primary rounded-md w-fit hover:bg-primary/95 focus:ring-4 focus:ring-green-400">
-                                        Lihat selengkapnya
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="swiper-pagination"></div>
             <div class="absolute top-0 left-0 lg:left-5 w-14 h-full button-prev z-[1] grid place-content-center">
@@ -269,7 +239,16 @@
             </div>
             <div>
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-3 md:gap-10 lg:gap-20">
-                    <div class="flex justify-center order-2 col-span-1 lg:col-span-2 lg:order-1">
+                    <!-- Spinner -->
+
+                    <div class="relative flex justify-center order-2 col-span-1 lg:col-span-2 lg:order-1">
+                        <div id="age-loading" class="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+                            <div class="spinner"></div>
+                        </div>
+                        <div id="display-error"
+                            class="hidden absolute inset-0  items-center justify-center bg-white/70 z-10">
+                            <p class="text-center">Ada kesalahan</p>
+                        </div>
                         <canvas id="population-by-age" class="second"></canvas>
                     </div>
                     <div class="grid order-1 place-content-center lg:order-2">
@@ -305,7 +284,7 @@
                         <div class="row-span-1 lg:row-span-3">
                             @if ($berita)
                                 <div class="hidden lg:block">
-                                    <a href="#" class="sequenced">
+                                    <a href="{{ route('berita.detail', $berita[0]->slug) }}" class="sequenced">
                                         <div class="relative w-full overflow-hidden rounded-xl h-96">
                                             <img src="{{ Storage::url($berita[0]->gambar) }}"
                                                 class="object-cover w-full h-full">
@@ -326,7 +305,8 @@
                             @endif
                             <div class="block lg:hidden">
                                 @forelse ($berita as $data)
-                                    <a href="{{ $data['link'] }}" class="flex flex-row space-x-5 space-y-0 sequenced">
+                                    <a href="{{ route('berita.detail', $data->slug) }}"
+                                        class="flex flex-row space-x-5 space-y-0 sequenced">
                                         <div class="shrink-0 w-24 h-16 md:h-24 md:w-36">
                                             <img src="{{ Storage::url($data->gambar) }}" alt="{{ $data->judul }}"
                                                 class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
@@ -351,7 +331,8 @@
                         </div>
                         <div class="hidden lg:block space-y-5">
                             @forelse ($berita as $data)
-                                <a href="{{ $data['link'] }}" class="flex flex-row space-x-5 space-y-0 sequenced">
+                                <a href="{{ route('berita.detail', $data->slug) }}"
+                                    class="flex flex-row space-x-5 space-y-0 sequenced">
                                     <div class="shrink-0 w-24 h-16 md:h-24 md:w-36">
                                         <img src="{{ Storage::url($data->gambar) }}" alt="{{ $data->judul }}"
                                             class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">

@@ -1,10 +1,33 @@
 import "./bootstrap";
 
 console.log("ad");
-GLightbox({
+const glightbox = GLightbox({
     selector: ".glightbox",
     touchNavigation: true,
-    loop: true,
+    autoplayVideos: true,
+    preload: true,
+    plyr: {
+        css: "https://cdn.plyr.io/3.5.6/plyr.css", // Default not required to include
+        js: "https://cdn.plyr.io/3.5.6/plyr.js", // Default not required to include
+        config: {
+            ratio: "16:9", // or '4:3'
+            muted: false,
+            hideControls: true,
+            youtube: {
+                noCookie: true,
+                rel: 0,
+                showinfo: 0,
+                iv_load_policy: 3,
+            },
+            vimeo: {
+                byline: false,
+                portrait: false,
+                title: false,
+                speed: true,
+                transparent: false,
+            },
+        },
+    },
 });
 
 const swiper = new Swiper(".swiper-banner", {
@@ -75,128 +98,101 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 const ctx1 = document.getElementById("population-by-age");
-const populationByAge = new Chart(ctx1, {
-    type: "bar",
-    data: {
-        labels: [
-            "Usia 0 - 4",
-            "Usia 5-9",
-            "Usia 10-14",
-            "Usia 15-19",
-            "Usia 20-24",
-            "Usia 25-29",
-            "Usia 30-34",
-            "Usia 35-39",
-            "Usia 40-44",
-            "Usia 45-49",
-            "Usia 50-54",
-            "Usia 55-59",
-            "Usia 60-69",
-            "Usia 70-74",
-            "Usia 75+",
-        ],
-        datasets: [
-            {
-                data: [
-                    154, 209, 227, 248, 251, 215, 171, 185, 195, 167, 140, 99,
-                    63, 22, 30,
-                ],
-                backgroundColor: "#015CB9",
-                valueFormated: [
-                    "154 jiwa",
-                    "209 jiwa",
-                    "227 jiwa",
-                    "248 jiwa",
-                    "251 jiwa",
-                    "215 jiwa",
-                    "171 jiwa",
-                    "185 jiwa",
-                    "195 jiwa",
-                    "167 jiwa",
-                    "140 jiwa",
-                    "99 jiwa",
-                    "63 jiwa",
-                    "22 jiwa",
-                    "30 jiwa",
-                ],
-                percentase: [
-                    "154 jiwa",
-                    "209 jiwa",
-                    "227 jiwa",
-                    "248 jiwa",
-                    "251 jiwa",
-                    "215 jiwa",
-                    "171 jiwa",
-                    "185 jiwa",
-                    "195 jiwa",
-                    "167 jiwa",
-                    "140 jiwa",
-                    "99 jiwa",
-                    "63 jiwa",
-                    "22 jiwa",
-                    "30 jiwa",
+const loadingEl = document.getElementById("age-loading");
+const displayError = document.getElementById("display-error");
+
+async function loadPopulationByAge() {
+    try {
+        loadingEl.style.display = "flex";
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/api/penduduk/pesebaran/usia"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch age distribution data");
+        }
+
+        const result = await response.json();
+
+        const dataset = result.datasets[0];
+
+        new Chart(ctx1, {
+            type: "bar",
+            data: {
+                labels: result.labels,
+                datasets: [
+                    {
+                        data: dataset.data,
+                        backgroundColor: "#015CB9",
+                        valueFormated: dataset.valueFormated,
+                        percentase: dataset.percentase,
+                    },
                 ],
             },
-        ],
-    },
-    options: {
-        animation: {
-            delay: 1000,
-        },
-        scales: {
-            y: {
-                ticks: {
-                    display: false,
+            options: {
+                animation: {
+                    delay: 1000,
                 },
-            },
-            x: {
-                grid: {
-                    // borderWidth: 2,
-                    // borderColor: 'rgb(48, 163, 73, .8)',
-                    // color: '#015CB9'
+                scales: {
+                    y: {
+                        ticks: {
+                            display: false,
+                        },
+                    },
+                    x: {
+                        grid: {},
+                    },
                 },
-            },
-        },
-        layout: {
-            padding: {
-                top: 40,
-                bottom: 10,
-                right: 10,
-                left: 10,
-            },
-        },
-        plugins: {
-            legend: {
-                display: false,
-            },
-            tooltip: {
-                displayColors: false,
-                callbacks: {
-                    label: function (tooltipItem, data) {
-                        return tooltipItem.dataset.valueFormated[
-                            tooltipItem.dataIndex
-                        ];
+                layout: {
+                    padding: {
+                        top: 40,
+                        bottom: 10,
+                        right: 10,
+                        left: 10,
+                    },
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        displayColors: false,
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.dataset.valueFormated[
+                                    tooltipItem.dataIndex
+                                ];
+                            },
+                        },
+                    },
+                    datalabels: {
+                        formatter: function (value, context) {
+                            return context.chart.data.datasets[0].percentase[
+                                context.dataIndex
+                            ];
+                        },
+                        align: "end",
+                        anchor: "end",
+                        color: "black",
+                        textAlign: "center",
+                        font: {
+                            size: 12,
+                            weight: "bold",
+                        },
                     },
                 },
             },
-            datalabels: {
-                formatter: function (value, context) {
-                    return context.chart.data.datasets[0].percentase[
-                        context.dataIndex
-                    ];
-                },
-                align: "end",
-                anchor: "end",
-                color: "black",
-                textAlign: "center",
-                font: {
-                    size: 12,
-                    weight: "bold",
-                },
-            },
-        },
-    },
-});
+        });
+    } catch (error) {
+        console.error(error);
+        displayError.style.display = "flex";
+    } finally {
+        loadingEl.style.display = "none";
+    }
+}
+
+loadPopulationByAge();
 
 const ctx7 = document.getElementById("infrastructure-type");
 const infrastructureType = new Chart(ctx7, {

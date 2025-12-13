@@ -5,7 +5,7 @@
             <!-- Brand -->
             <div>
                 <div class="flex items-center gap-3 mb-4">
-                    <img src="assets/logo.png" alt="MJR SHOP" class="h-12">
+                    <img src="{{ Storage::url('logo.png') }}" alt="MJR SHOP" class="h-12">
                     <h4 class="text-xl font-semibold text-white">Kelurahan Mangalli</h4>
                 </div>
                 <p class="text-sm leading-relaxed">
