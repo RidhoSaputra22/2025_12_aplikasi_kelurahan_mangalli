@@ -195,128 +195,119 @@ async function loadPopulationByAge() {
 loadPopulationByAge();
 
 const ctx7 = document.getElementById("infrastructure-type");
-const infrastructureType = new Chart(ctx7, {
-    type: "bar",
-    data: {
-        labels: [
-            "TK",
-            "SD",
-            "SMP",
-            "SMA",
-            "Puskesmas",
-            "Rumah Bersalin",
-            "Poliklinik",
-            "Masjid dan Surau",
-        ],
-        datasets: [
-            {
-                data: [37, 39, 7, 3, 2, 3, 2, 9],
-                labelFormated: [
-                    "TK",
-                    "SD",
-                    "SMP",
-                    "SMA",
-                    "Puskesmas",
-                    "Rumah Bersalin",
-                    "Poliklinik",
-                    "Masjid dan Surau",
+const loadingE7 = document.getElementById("infrastructure-loading");
+const displayError7 = document.getElementById("infrastructure-error");
+
+async function loadInfrastructureChart() {
+    try {
+        loadingE7.style.display = "flex";
+
+        const response = await fetch(
+            "http://127.0.0.1:8000/api/desa/sarana-prasarana/"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch infrastructure data");
+        }
+
+        const result = await response.json();
+        const dataset = result.datasets[0];
+
+        new Chart(ctx7, {
+            type: "bar",
+            data: {
+                labels: result.labels,
+                datasets: [
+                    {
+                        data: dataset.data,
+                        backgroundColor: dataset.backgroundColor,
+                        valueFormated: dataset.valueFormated,
+                        percentase: dataset.percentase,
+                    },
                 ],
-                valueFormated: [
-                    "37 unit",
-                    "39 unit",
-                    "7 unit",
-                    "3 unit",
-                    "2 unit",
-                    "3 unit",
-                    "2 unit",
-                    "9 unit",
-                ],
-                percentase: [
-                    "37 unit",
-                    "39 unit",
-                    "7 unit",
-                    "3 unit",
-                    "2 unit",
-                    "3 unit",
-                    "2 unit",
-                    "9 unit",
-                ],
-                backgroundColor: "#015CB9",
             },
-        ],
-    },
-    options: {
-        animation: {
-            delay: 1000,
-        },
-        scales: {
-            y: {
-                ticks: {
-                    display: true,
+            options: {
+                animation: {
+                    delay: 1000,
                 },
-            },
-            x: {
-                ticks: {
-                    display: true,
-                    minRotation: 0,
-                    maxRotation: 0,
-                    autoSkip: false,
-                    padding: 6,
+                scales: {
+                    y: {
+                        ticks: {
+                            display: true,
+                        },
+                    },
+                    x: {
+                        ticks: {
+                            display: true,
+                            minRotation: 0,
+                            maxRotation: 0,
+                            autoSkip: false,
+                            padding: 6,
+                        },
+                    },
                 },
-            },
-        },
-        layout: {
-            padding: {
-                top: 40,
-                bottom: 10,
-                right: 10,
-                left: 10,
-            },
-        },
-        plugins: {
-            legend: {
-                display: false,
-            },
-            title: {
-                display: true,
-                text: [
-                    "Data Sarana dan Prasarana di Kecamatan Pallangga ",
-                    "(Kelurahan Mangalli adalah Ibukota Kecamatan)",
-                    "Badan Pusat Statistik (BPS) 2011-2015",
-                ],
-                font: {
-                    size: 24,
-                    weight: "bold",
+                layout: {
+                    padding: {
+                        top: 40,
+                        bottom: 10,
+                        right: 10,
+                        left: 10,
+                    },
                 },
-                padding: {
-                    top: 10,
-                    bottom: 25,
-                },
-            },
-            tooltip: {
-                displayColors: false,
-                callbacks: {
-                    label: function (tooltipItem) {
-                        return tooltipItem.dataset.valueFormated[
-                            tooltipItem.dataIndex
-                        ];
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: [
+                            "Data Sarana dan Prasarana di Kecamatan Pallangga",
+                            "(Kelurahan Mangalli adalah Ibukota Kecamatan)",
+                            "Badan Pusat Statistik (BPS) 2011–2015",
+                        ],
+                        font: {
+                            size: 24,
+                            weight: "bold",
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 25,
+                        },
+                    },
+                    tooltip: {
+                        displayColors: false,
+                        callbacks: {
+                            label: function (tooltipItem) {
+                                return tooltipItem.dataset.valueFormated[
+                                    tooltipItem.dataIndex
+                                ];
+                            },
+                        },
+                    },
+                    datalabels: {
+                        formatter: function (value, context) {
+                            return context.chart.data.labels[context.dataIndex];
+                        },
+                        align: "end",
+                        anchor: "end",
+                        color: "black",
+                        textAlign: "center",
+                        offset: -4,
+                        font: {
+                            size: 11,
+                            weight: "bold",
+                        },
                     },
                 },
             },
-            datalabels: {
-                formatter: function (value, context) {
-                    return context.chart.data.labels[context.dataIndex];
-                },
-                align: "end",
-                anchor: "end",
-                color: "black",
-                textAlign: "center",
-                offset: -4,
-                font: {
-                    size: 11,
-                    weight: "bold",
-                },
-            },
-        },
-    },
-});
+        });
+    } catch (error) {
+        console.error(error);
+        displayError7.style.display = "flex";
+    } finally {
+        loadingE7.style.display = "none";
+    }
+}
+
+// panggil saat halaman siap
+loadInfrastructureChart();

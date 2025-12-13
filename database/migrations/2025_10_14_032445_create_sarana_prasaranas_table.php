@@ -26,7 +26,7 @@ return new class extends Migration
 
         DB::table('sarana_prasaranas')->insert([
             [
-                'nama_sarana' => 'Taman Kanak-kanak',
+                'nama_sarana' => 'TK',
                 'jenis_sarana' => 'Pendidikan',
                 'kondisi_sarana' => 'Baik',
                 'kapasitas_sarana' => 37,
@@ -37,7 +37,7 @@ return new class extends Migration
                 'updated_at' => now(),
             ],
             [
-                'nama_sarana' => 'Sekolah Dasar',
+                'nama_sarana' => 'SD',
                 'jenis_sarana' => 'Pendidikan',
                 'kondisi_sarana' => 'Baik',
                 'kapasitas_sarana' => 39,
@@ -48,7 +48,7 @@ return new class extends Migration
                 'updated_at' => now(),
             ],
             [
-                'nama_sarana' => 'Sekolah Menengah Pertama',
+                'nama_sarana' => 'SMP',
                 'jenis_sarana' => 'Pendidikan',
                 'kondisi_sarana' => 'Baik',
                 'kapasitas_sarana' => 7,
@@ -59,7 +59,7 @@ return new class extends Migration
                 'updated_at' => now(),
             ],
             [
-                'nama_sarana' => 'Sekolah Menengah Atas/Kejuruan',
+                'nama_sarana' => 'SMA',
                 'jenis_sarana' => 'Pendidikan',
                 'kondisi_sarana' => 'Baik',
                 'kapasitas_sarana' => 3,

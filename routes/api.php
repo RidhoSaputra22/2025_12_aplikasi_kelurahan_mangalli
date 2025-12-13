@@ -2,9 +2,10 @@
 
 use App\Models\DataPenduduk;
 use Illuminate\Http\Request;
+use App\Models\SaranaPrasarana;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/penduduk/pesebaran/usia', function (Request $request) {
+Route::get('/penduduk/pesebaran/usia', function () {
     $usia = DataPenduduk::usiaDistribution();
 
     return response()->json([
@@ -34,4 +35,10 @@ Route::get('/penduduk/pesebaran/usia', function (Request $request) {
             ]
         ]
     ]);
+});
+
+Route::get('/desa/sarana-prasarana', function () {
+    $data = SaranaPrasarana::chartSarana();
+
+    return response()->json($data);
 });

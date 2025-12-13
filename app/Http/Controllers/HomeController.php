@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BeritaDesa;
 use App\Models\GaleriDesa;
 use App\Models\AparaturDesa;
+use App\Models\ProfilDesa;
 use App\Models\DataPenduduk;
 use Illuminate\Http\Request;
 use App\Enum\JenisKelaminEnum;
@@ -46,7 +47,9 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        $profileDesa = ProfilDesa::first();
+
+        return view('profile', compact('profileDesa'));
     }
 
     public function galeri()

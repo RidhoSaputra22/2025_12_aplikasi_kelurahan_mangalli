@@ -16,22 +16,9 @@
                         <hr class="my-2 border-t-3 border-primary w-24 lg:mx-0 mx-auto">
 
                     </h3>
-                    <div class="space-y-5">
-                        <p class="text-lg font-light text-black text-justify ">
-                            Kelurahan Mangalli merupakan salah satu wilayah
-                            di Kecamatan Pallangga, Kabupaten Gowa, Sulawesi Selatan, yang sejarah namanya berakar dari
-                            cerita
-                            lisan lokal masyarakat Gowa. Meskipun detail spesifik mengenai kisah asal usul nama "Mangalli"
-                            tidak terdokumentasi luas secara publik, wilayah ini secara historis terkait erat dengan
-                            eksistensi Kerajaan Gowa (Kerajaan Makassar) yang merupakan salah satu kerajaan maritim terbesar
-                            di Indonesia Timur.
-                        </p>
-                        <p class="text-lg font-light text-black text-justify ">
-                            Sejarah Mangalli lebih banyak diturunkan melalui tradisi lisan dan
-                            pengetahuan lokal tokoh masyarakat, yang menggambarkan wilayah ini sebagai bagian dari kesatuan
-                            adat dan administrasi Kerajaan Gowa di masa lampau, sebelum menjadi kelurahan administratif di
-                            era modern.
-                        </p>
+                    <div class="space-y-5 text-lg font-light text-black text-justify">
+                        {!! $profileDesa->sejarah_desa !!}
+
                     </div>
                 </div>
             </div>
@@ -44,25 +31,32 @@
                     Sarana dan Prasarana
                     <hr class="my-2 border-t-4 border-primary w-24 ">
                 </h3>
-                <div class="">
-                    <p class="text-lg font-light text-black text-justify ">
-                        Kelurahan Mangalli merupakan salah satu wilayah
-                        di Kecamatan Pallangga, Kabupaten Gowa, Sulawesi Selatan, yang sejarah namanya berakar dari
-                        cerita
-                        lisan lokal masyarakat Gowa. Meskipun detail spesifik mengenai kisah asal usul nama "Mangalli"
-                        tidak terdokumentasi luas secara publik, wilayah ini secara historis terkait erat dengan
-                        eksistensi Kerajaan Gowa (Kerajaan Makassar) yang merupakan salah satu kerajaan maritim terbesar
-                        di Indonesia Timur.
+                <div class="text-lg font-light text-black text-justify ">
+                    <p class="">
+                        Berdasarkan data Badan Pusat Statistik (BPS) tahun 2011–2015, Kelurahan Mangalli sebagai ibu kota
+                        Kecamatan Pallangga didukung oleh ketersediaan sarana dan prasarana yang relatif memadai untuk
+                        menunjang pelayanan publik dan aktivitas masyarakat.
                     </p>
-                    <p class="text-lg font-light text-black text-justify ">
-                        Sejarah Mangalli lebih banyak diturunkan melalui tradisi lisan dan
-                        pengetahuan lokal tokoh masyarakat, yang menggambarkan wilayah ini sebagai bagian dari kesatuan
-                        adat dan administrasi Kerajaan Gowa di masa lampau, sebelum menjadi kelurahan administratif di
-                        era modern.
-                    </p>
+                    <p>Pada sektor pendidikan, terdapat 39 unit Sekolah Dasar (SD) yang menjadi fasilitas pendidikan
+                        terbanyak dan berperan penting dalam menjangkau kebutuhan pendidikan dasar masyarakat. Selain itu,
+                        tersedia 37 unit Taman Kanak-kanak (TK) sebagai sarana pendidikan anak usia dini. Untuk jenjang
+                        pendidikan menengah, terdapat 7 unit Sekolah Menengah Pertama (SMP) dan 3 unit Sekolah Menengah
+                        Atas/Kejuruan (SMA/SMK) yang melayani pendidikan lanjutan bagi penduduk usia sekolah di wilayah
+                        kecamatan.</p>
+
                 </div>
                 <div>
-                    <div class="    ">
+                    <div class="relative ">
+                        <div id="infrastructure-loading"
+                            class="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+                            <div class="spinner"></div>
+                        </div>
+
+                        <div id="infrastructure-error"
+                            class="hidden absolute inset-0  items-center justify-center bg-white/70 z-10">
+                            <p class="text-center">Ada kesalahan</p>
+                        </div>
+
                         <div class="flex justify-center order-2 col-span-1 lg:col-span-2 lg:order-1">
                             <canvas id="infrastructure-type" class="second"></canvas>
                         </div>
@@ -76,13 +70,9 @@
                         Visi Kelurahan Mangalli
                         <hr class="my-2 border-t-4 border-primary w-24 ">
                     </h3>
-                    <div class="">
-                        <p class="text-lg font-light text-black text-justify ">
-                            Visi yang dianut secara berjenjang hingga ke tingkat kelurahan adalah:
-                            "Kabupaten Gowa Unggul, Maju dan Berkelanjutan" (Visi periode saat ini, sebelumnya adalah
-                            "Terwujudnya Masyarakat yang Berkualitas, Mandiri dan Berdaya Saing dengan Tata Kelola
-                            Pemerintahan yang Baik").
-                        </p>
+                    <div class="text-lg font-light text-black text-justify ">
+                        {!! $profileDesa->visi !!}
+
                     </div>
                 </div>
                 <div>
@@ -90,22 +80,9 @@
                         Misi Kelurahan Mangalli
                         <hr class="my-2 border-t-4 border-primary w-24 ">
                     </h3>
-                    <div class="space-y-4">
-                        <p class="text-lg font-light text-black text-justify ">
-                            Misi ini berfokus pada beberapa aspek pembangunan daerah yang relevan dan dilaksanakan di
-                            tingkat kelurahan melalui berbagai program kerja, antara lain:
-                        </p>
-                        <p class="text-lg font-light text-black text-justify ">
-                            Meningkatkan kualitas Sumber Daya Manusia berbasis pada hak-hak dasar kesetaraan gender, nilai
-                            budaya dan agama.
-                        </p>
-                        <p class="text-lg font-light text-black text-justify ">
-                            Meningkatkan pembangunan dan pengelolaan infrastruktur dan kualitas lingkungan hidup yang
-                            terencana dan terpadu.
-                        </p>
-                        <p class="text-lg font-light text-black text-justify ">
-                            Meningkatkan tata kelola pemerintahan yang baik, bersih, transparan, dan akuntabel.
-                        </p>
+                    <div class="space-y-4 text-lg font-light text-black text-justify ">
+                        {!! $profileDesa->misi !!}
+
                     </div>
                 </div>
             </div>
