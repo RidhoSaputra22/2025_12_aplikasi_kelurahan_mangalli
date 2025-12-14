@@ -1,8 +1,9 @@
-<div x-data="{ open: false }" class="bg-primary text-white">
+<div x-data="{ open: false }"
+    class="bg-primary {{ request()->is('/') ? 'lg:bg-transparent' : '' }} lg:absolute lg:top-0 lg:inset-x-0 z-10 text-white">
 
     <!-- HEADER ATAS -->
     <div class="p-3 flex justify-between items-center gap-4">
-        <div class="flex gap-3 justify-center items-center">
+        <div class="flex-2 flex gap-3 justify-start items-center">
             <img src="{{ Storage::url('logo.png') }}" alt="" class="h-12">
             <div>
                 <h1 class="text-2xl font-semibold">Kelurahan Mangalli</h1>
@@ -11,11 +12,15 @@
         </div>
 
         <!-- Kontak (hidden on mobile) -->
-        <div class="text-sm hidden md:block">
-            <h1>Jalan Allattappampang RT 004 RW 003</h1>
-            <h1>Kecamatan Palangga, Kabupaten Gowa</h1>
-            <h1>Sulawesi Selatan</h1>
-            <a href="https://wa.me/6285394998504" class="hover:underline">Telp: 0853-9499-8504</a>
+        <div class="flex-1  hidden md:block">
+            <div class="flex justify-between">
+                <a class="block px-4 py-2 hover:underline" href="/">Beranda</a>
+                <a class="block px-4 py-2 hover:underline" href="/profile">Profil</a>
+                <a class="block px-4 py-2 hover:underline" href="/berita">Berita</a>
+                <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
+                <a class="block px-4 py-2 hover:underline" href="https://wa.me/6285394998504">Pengaduan</a>
+                <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
+            </div>
         </div>
 
         <!-- Hamburger button (mobile only) -->
@@ -31,8 +36,8 @@
     </div>
 
     <!-- MENU -->
-    <div class="py-3 bg-primary-500">
-        <ul class="md:flex md:justify-center md:gap-12" x-cloak :class="open ? 'block' : 'hidden md:flex'">
+    <div class="py-3 bg-primary-500 lg:hidden">
+        <ul class=" md:flex md:justify-center md:gap-12" x-cloak :class="open ? 'block' : 'hidden md:flex'">
 
             <a class="block px-4 py-2 hover:underline" href="/">Beranda</a>
             <a class="block px-4 py-2 hover:underline" href="/profile">Profil</a>

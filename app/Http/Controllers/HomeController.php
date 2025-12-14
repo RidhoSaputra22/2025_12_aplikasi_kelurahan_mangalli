@@ -21,28 +21,17 @@ class HomeController extends Controller
         $aparat = AparaturDesa::all();
 
         $penduduk = [
-            [
-                'label' => 'penduduk',
-                'count' => DataPenduduk::count(),
-            ],
-            [
-
-                'label' => 'Laki laki',
-                'count' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::L)->count(),
-            ],
-            [
-                'label' => 'Perempuan',
-                'count' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::P)->count(),
-            ],
-            [
-                'label' => 'Kepala Keluarga',
-                'count' => DataPenduduk::distinct('no_kk')->count(),
-            ],
+            'total'  => DataPenduduk::count(),
+            'laki' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::L)->count(),
+            'perempuan' => DataPenduduk::where('jenis_kelamin', JenisKelaminEnum::P)->count(),
+            'kk'  => DataPenduduk::distinct('no_kk')->count(),
         ];
+
+        $profileDesa = ProfilDesa::first();
 
         $berita = BeritaDesa::take(3)->get();
 
-        return view('welcome', compact('aparat', 'penduduk', 'berita'));
+        return view('welcome', compact('aparat', 'penduduk', 'berita', 'profileDesa'));
     }
 
     public function profile()

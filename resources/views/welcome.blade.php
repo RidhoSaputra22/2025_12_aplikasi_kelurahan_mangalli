@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="hero" class="w-full h-[650px]">
+    <section id="hero" class="w-full h-[700px] overflow-hidden rounded-b-3xl">
         <div class="w-full h-full swiper swiper-banner">
             <div class="w-full h-full swiper-wrapper">
                 <div class="relative w-full h-full swiper-slide">
@@ -22,7 +22,7 @@
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-40">
-                        <div class="flex items-center h-full max-w-6xl mx-auto">
+                        <div class="flex items-center h-full max-w-7xl mx-auto">
                             <div class="space-y-8">
                                 <h1
                                     class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words lg:text-left md:text-8xl">
@@ -54,7 +54,7 @@
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-40">
-                        <div class="flex items-center justify-center h-full max-w-6xl mx-auto">
+                        <div class="flex items-center justify-center h-full max-w-7xl mx-auto">
                             <div class="space-y-8">
                                 <h1
                                     class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words md:text-8xl">
@@ -104,7 +104,7 @@
     </section>
     <section class="relative">
         <div class="px-6 md:px-10">
-            <div class="max-w-6xl py-32 mx-auto">
+            <div class="max-w-7xl py-32 mx-auto">
                 <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
                     <div class="order-2 space-y-5 lg:order-1">
                         <h3 class="text-4xl font-bold text-center text-primary lg:text-left">
@@ -137,10 +137,81 @@
             </div>
         </div>
     </section>
+    <section class=" relative bg-primary">
+        <div class="px-6 md:px-10">
+            <div class="max-w-7xl py-32 mx-auto text-white ">
+
+                <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
+                    <div class=" space-y-5   ">
+                        <h3 class=" text-4xl font-bold text-center lg:text-left">
+                            Visi dan Misi Kelurahan Mangalli
+                            <hr class="my-2 border-t-3 border-white w-24 lg:mx-0 mx-auto">
+                        </h3>
+                        <div class="space-y-5 text-center  lg:text-left description">
+                            <div class="pt-5 space-y-1">
+                                <h6 class="text-xl font-semibold">
+                                    Visi
+                                </h6>
+                                <p class="text-lg font-light">
+
+                                </p>
+                            </div>
+                            <div class="text-xl font-light leading-relaxed text-justify">
+                                {!! $profileDesa->visi !!}
+                            </div>
+                        </div>
+                        <div class="space-y-5 text-center  lg:text-left description">
+                            <div class="pt-5 space-y-1">
+                                <h6 class="text-xl font-semibold">
+                                    Misi
+                                </h6>
+                                <p class="text-lg font-light">
+
+                                </p>
+                            </div>
+                            <div class="text-xl font-light leading-relaxed">
+                                {!! $profileDesa->misi !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative  h-100 ">
+                        <div class="hidden lg:block absolute top-0 inset-0 bg-white h-32 aspect-square rounded-sm">
+                        </div>
+                        <div
+                            class="lg:absolute lg:top-10 lg:left-10 lg:inset-0 z-10 swiper visi-misi-swiper h-100 w-100  rounded-sm">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="{{ Storage::url('banner-1.jpeg') }}" alt="visi-misi-1"
+                                        class="object-cover w-full h-full">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ Storage::url('banner-2.jpeg') }}" alt="visi-misi-1"
+                                        class="object-cover w-full h-full">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ Storage::url('banner-3.jpeg') }}" alt="visi-misi-1"
+                                        class="object-cover w-full h-full">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="{{ Storage::url('banner-4.jpeg') }}" alt="visi-misi-1"
+                                        class="object-cover w-full h-full">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <section class="relative content text-center lg:text-left">
-        <div class="max-w-6xl py-20 pt-0 mx-auto space-y-16">
+        <div class="max-w-7xl  py-32 mx-auto space-y-16 ">
 
             <h3 class="text-4xl font-bold text-center text-primary">
                 Struktur Aparatur Kelurahan Mangalli
@@ -182,16 +253,16 @@
         </div>
     </section>
     <section class="relative content text-center lg:text-left">
-        <div class="max-w-6xl py-20 pt-0 mx-auto space-y-10">
+        <div class="max-w-7xl py-20 pt-0 mx-auto space-y-10">
             <h3 class="text-4xl font-bold text-center text-primary lg:text-left">
                 Administrasi Penduduk Kelurahan Mangalli
                 <hr class="my-2 border-t-3 border-primary w-24 lg:mx-0 mx-auto">
                 <p class="text-lg font-light text-black">Data Administrasi Penduduk Kelurahan Mangalli Tahun 2025</p>
             </h3>
             <div class="grid grid-cols-1 gap-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4 md:gap-10">
-                <div class="flex gap-3 ">
-                    <div class="p-3 bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <div class="flex gap-3  ">
+                    <div class="p-3 rounded-sm bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                         </svg>
@@ -199,41 +270,41 @@
                     </div>
                     <div>
                         <div class="text-xl">Penduduk</div>
-                        <div>895</div>
+                        <div class="text-left">{{ $penduduk['total'] }}</div>
                     </div>
                 </div>
-                <div class="flex gap-3 ">
-                    <div class="p-3 bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <div class="flex gap-3  ">
+                    <div class="p-3 rounded-sm bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                         </svg></div>
                     <div>
                         <div class="text-xl">Laki laki</div>
-                        <div>420</div>
+                        <div class="text-left">{{ $penduduk['laki'] }}</div>
                     </div>
                 </div>
-                <div class="flex gap-3 ">
-                    <div class="p-3 bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <div class="flex gap-3  ">
+                    <div class="p-3 rounded-sm bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                         </svg></div>
                     <div>
                         <div class="text-xl">Perempuan</div>
-                        <div>475</div>
+                        <div class="text-left">{{ $penduduk['perempuan'] }}</div>
                     </div>
                 </div>
-                <div class="flex gap-3 ">
-                    <div class="p-3 bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <div class="flex gap-3  ">
+                    <div class="p-3 rounded-sm bg-primary text-white"><svg xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
                     </div>
                     <div>
                         <div class="text-xl">Kepala Keluarga</div>
-                        <div>291</div>
+                        <div class="text-left">{{ $penduduk['kk'] }}</div>
                     </div>
                 </div>
             </div>
@@ -271,7 +342,7 @@
     </section>
     <section id="publication">
         <div class="px-6 md:px-10">
-            <div class="max-w-6xl py-20 pt-10 mx-auto lg:pt-20">
+            <div class="max-w-7xl py-20 pt-10 mx-auto lg:pt-20">
                 <div class="space-y-10">
                     <h3 class="text-4xl font-bold text-center text-primary lg:text-left">
                         Berita Kelurahan Mangalli
@@ -296,14 +367,15 @@
                                                     {{ $berita[0]->judul }}
                                                 </h6>
                                                 <p class="text-lg font-light text-white/80">
-                                                    {{ $berita[0]->tanggal }}
+                                                    {{ $berita[0]->created_at->format('d F Y') }}
                                                 </p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             @endif
-                            <div class="block lg:hidden">
+                            {{-- mobile --}}
+                            <div class="block lg:hidden space-y-3">
                                 @forelse ($berita as $data)
                                     <a href="{{ route('berita.detail', $data->slug) }}"
                                         class="flex flex-row space-x-5 space-y-0 sequenced">
@@ -317,7 +389,8 @@
                                                 {{ $data->judul }}
                                             </h3>
                                             <p class="font-light text-black">
-                                                {{ $data->tanggal }}
+                                                {{ $berita[0]->created_at->format('d F Y') }}
+
                                             </p>
                                         </div>
                                     </a>
@@ -343,7 +416,8 @@
                                             {{ $data->judul }}
                                         </h3>
                                         <p class="font-light text-black">
-                                            {{ $data->tanggal }}
+                                            {{ $berita[0]->created_at->format('d F Y') }}
+
                                         </p>
                                     </div>
                                 </a>

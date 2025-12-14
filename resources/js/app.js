@@ -49,6 +49,21 @@ const swiper = new Swiper(".swiper-banner", {
         crossFade: true,
     },
 });
+
+const visiMisiSwiper = new Swiper(".visi-misi-swiper", {
+    direction: "vertical",
+    loop: true,
+    speed: 1000,
+    centeredSlides: true,
+
+    slidesPerView: "auto",
+
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+    },
+});
+
 const swiperAparat = new Swiper(".swiper-aparat", {
     loop: true,
     speed: 700,
@@ -105,9 +120,7 @@ async function loadPopulationByAge() {
     try {
         loadingEl.style.display = "flex";
 
-        const response = await fetch(
-            "http://127.0.0.1:8000/api/penduduk/pesebaran/usia"
-        );
+        const response = await fetch("/api/penduduk/pesebaran/usia");
 
         if (!response.ok) {
             throw new Error("Failed to fetch age distribution data");
@@ -116,6 +129,25 @@ async function loadPopulationByAge() {
         const result = await response.json();
 
         const dataset = result.datasets[0];
+
+        let windowWidth = window.innerWidth;
+        let windowHeight = window.innerHeight;
+        let chartPadding = {
+            top: 40,
+            bottom: 10,
+            right: 10,
+            left: 10,
+        };
+
+        if (windowWidth < 768) {
+            // ctx1.height = 300;
+            chartPadding = {
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+            };
+        }
 
         new Chart(ctx1, {
             type: "bar",
@@ -142,15 +174,17 @@ async function loadPopulationByAge() {
                     },
                     x: {
                         grid: {},
+                        ticks: {
+                            display: true,
+                            minRotation: 0,
+                            maxRotation: 0,
+                            autoSkip: true,
+                            padding: 6,
+                        },
                     },
                 },
                 layout: {
-                    padding: {
-                        top: 40,
-                        bottom: 10,
-                        right: 10,
-                        left: 10,
-                    },
+                    padding: chartPadding,
                 },
                 plugins: {
                     legend: {
@@ -202,9 +236,7 @@ async function loadInfrastructureChart() {
     try {
         loadingE7.style.display = "flex";
 
-        const response = await fetch(
-            "http://127.0.0.1:8000/api/desa/sarana-prasarana/"
-        );
+        const response = await fetch("/api/desa/sarana-prasarana/");
 
         if (!response.ok) {
             throw new Error("Failed to fetch infrastructure data");
@@ -212,6 +244,25 @@ async function loadInfrastructureChart() {
 
         const result = await response.json();
         const dataset = result.datasets[0];
+
+        let windowWidth = window.innerWidth;
+        let windowHeight = window.innerHeight;
+        let chartPadding = {
+            top: 40,
+            bottom: 10,
+            right: 10,
+            left: 10,
+        };
+
+        if (windowWidth < 768) {
+            ctx7.height = 300;
+            chartPadding = {
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+            };
+        }
 
         new Chart(ctx7, {
             type: "bar",
@@ -241,18 +292,13 @@ async function loadInfrastructureChart() {
                             display: true,
                             minRotation: 0,
                             maxRotation: 0,
-                            autoSkip: false,
+                            autoSkip: true,
                             padding: 6,
                         },
                     },
                 },
                 layout: {
-                    padding: {
-                        top: 40,
-                        bottom: 10,
-                        right: 10,
-                        left: 10,
-                    },
+                    padding: chartPadding,
                 },
                 plugins: {
                     legend: {
