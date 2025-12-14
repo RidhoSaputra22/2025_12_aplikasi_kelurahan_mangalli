@@ -11,7 +11,7 @@
     {{-- Glightbox --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-    <title>@yield('title', 'Kelurahan Mangalli')</title>
+    <title>@yield('title', 'Kelurahan Mangalli') HAHAH</title>
 
 </head>
 
