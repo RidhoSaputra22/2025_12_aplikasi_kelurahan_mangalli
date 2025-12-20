@@ -18,7 +18,8 @@
                 <a class="block px-4 py-2 hover:underline" href="/profile">Profil</a>
                 <a class="block px-4 py-2 hover:underline" href="/berita">Berita</a>
                 <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
-                <a class="block px-4 py-2 hover:underline" href="https://wa.me/6285394998504">Pengaduan</a>
+                <a class="block px-4 py-2 hover:underline"
+                    href="https://www.instagram.com/direct/t/17842642305441508/">Pengaduan</a>
                 <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
             </div>
         </div>
@@ -43,7 +44,8 @@
             <a class="block px-4 py-2 hover:underline" href="/profile">Profil</a>
             <a class="block px-4 py-2 hover:underline" href="/berita">Berita</a>
             <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
-            <a class="block px-4 py-2 hover:underline" href="https://wa.me/6285394998504">Pengaduan</a>
+            <a class="block px-4 py-2 hover:underline"
+                href="https://www.instagram.com/direct/t/17842642305441508/">Pengaduan</a>
             <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
         </ul>
     </div>
