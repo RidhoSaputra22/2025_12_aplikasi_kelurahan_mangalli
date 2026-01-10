@@ -33,7 +33,7 @@ class HomeController extends Controller
         $lurah = AparaturDesa::where('jabatan', 'Lurah')->first();
         $profileDesa = ProfilDesa::first();
 
-        dd($profileDesa);
+        // dd($profileDesa);
 
         return view('welcome', compact('aparat', 'penduduk', 'berita', 'profileDesa', 'lurah'));
     }
