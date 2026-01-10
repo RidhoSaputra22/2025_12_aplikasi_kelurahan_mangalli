@@ -2,11 +2,11 @@
 
 @section('content')
     <section class="min-h-screen py-14">
-        <div class="m-24 space-y-14">
+        <div class="m-4 lg:m-24 space-y-14">
             <h3 class="text-4xl font-bold text-center text-primary lg:text-left">
                 Kegiatan Kelurahan Mangalli
                 <hr class="my-2 border-t-3 border-primary w-24 lg:mx-0 mx-auto">
-                <p class="text-lg font-light text-black text-justify ">
+                <p class="text-lg font-light text-black text-center lg:text-justify ">
                     Berikut adalah beberapa kegiatan yang dilakukan oleh kelurahan Mangalli
                 </p>
             </h3>

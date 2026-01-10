@@ -20,7 +20,7 @@
                 <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
                 <a class="block px-4 py-2 hover:underline"
                     href="https://www.instagram.com/direct/t/17842642305441508/">Pengaduan</a>
-                <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
+                <a class="block px-4 py-2 hover:underline" href="/admin/login">Masuk</a>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
             <a class="block px-4 py-2 hover:underline" href="/galeri">Galeri</a>
             <a class="block px-4 py-2 hover:underline"
                 href="https://www.instagram.com/direct/t/17842642305441508/">Pengaduan</a>
-            <a class="block px-4 py-2 hover:underline" href="/admin/login">Login</a>
+            <a class="block px-4 py-2 hover:underline" href="/admin/login">Masuk</a>
         </ul>
     </div>
 
