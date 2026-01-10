@@ -10,6 +10,7 @@ class ProfilDesa extends Model
         'logo_desa',
         'nama_desa',
         'sejarah_desa',
+        'sambutan',
         'visi',
         'misi',
         'alamat',
