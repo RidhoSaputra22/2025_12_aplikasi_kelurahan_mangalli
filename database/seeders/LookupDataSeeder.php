@@ -23,9 +23,6 @@ class LookupDataSeeder extends Seeder
         ];
         \App\Models\Agama::insert($dataAgama);
 
-
-
-
         $dataStatusKeluarga = [
             ['nama_status' => 'Kepala Keluarga'],
             ['nama_status' => 'Istri'],

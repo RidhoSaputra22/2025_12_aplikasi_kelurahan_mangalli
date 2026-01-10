@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_desa');
             $table->string('sub_judul')->nullable();
             $table->text('sejarah_desa')->nullable();
+            $table->text('sambutan')->nullable();
             $table->text('visi')->nullable();
             $table->text('misi')->nullable();
             $table->text('alamat')->nullable();
@@ -31,6 +32,7 @@ return new class extends Migration
             'nama_desa' => 'Desa Maju',
             'sub_judul' => 'Informasi mengenai sejarah, visi, misi desa beserta lebih mengenal aparatur-aparatur desa kelurahan tuwung',
             'sejarah_desa' => '<p>Kelurahan Mangalli merupakan salah satu wilayah di Kecamatan Pallangga, Kabupaten Gowa, Sulawesi Selatan, yang sejarah namanya berakar dari cerita lisan lokal masyarakat Gowa. Meskipun detail spesifik mengenai kisah asal usul nama &quot;Mangalli&quot; tidak terdokumentasi luas secara publik, wilayah ini secara historis terkait erat dengan eksistensi Kerajaan Gowa (Kerajaan Makassar) yang merupakan salah satu kerajaan maritim terbesar di Indonesia Timur.</p><p>Sejarah Mangalli lebih banyak diturunkan melalui tradisi lisan dan pengetahuan lokal tokoh masyarakat, yang menggambarkan wilayah ini sebagai bagian dari kesatuan adat dan administrasi Kerajaan Gowa di masa lampau, sebelum menjadi kelurahan administratif di era modern.</p>',
+            'sambutan' => '<p>Website ini hadir sebagai wujud transformasi Kelurahan Mangalli menjadi desa yang mampu memanfaatkan teknologi informasi dan komunikasi, terintegrasi ke dalam sistem online. Keterbukaan informasi publik dan kegiatan perekonomian di desa, guna mewujudkan Desa Paccekke sebagai desa wisata yang berkelanjutan, adaptasi dan mitigasi terhadap perubahan iklim serta menjadi desa yang mandiri.</p>',
             'visi' => '<p> Visi yang dianut secara berjenjang hingga ke tingkat kelurahan adalah:
                             "Kabupaten Gowa Unggul, Maju dan Berkelanjutan" (Visi periode saat ini, sebelumnya adalah
                             "Terwujudnya Masyarakat yang Berkualitas, Mandiri dan Berdaya Saing dengan Tata Kelola

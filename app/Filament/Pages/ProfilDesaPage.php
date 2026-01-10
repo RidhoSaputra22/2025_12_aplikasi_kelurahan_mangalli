@@ -42,10 +42,11 @@ class ProfilDesaPage extends Page
                 RichEditor::make('sejarah_desa')
                     ->columnSpanFull()
                     ->required(),
-                RichEditor::make('visi')
-                    ->columnSpanFull(),
-                RichEditor::make('misi')
-                    ->columnSpanFull(),
+                RichEditor::make('sambutan')
+                    ->columnSpanFull()
+                    ->required(),
+
+
 
 
 

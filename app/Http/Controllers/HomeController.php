@@ -27,11 +27,13 @@ class HomeController extends Controller
             'kk'  => DataPenduduk::distinct('no_kk')->count(),
         ];
 
-        $profileDesa = ProfilDesa::first();
 
         $berita = BeritaDesa::take(3)->get();
 
-        return view('welcome', compact('aparat', 'penduduk', 'berita', 'profileDesa'));
+        $lurah = AparaturDesa::where('jabatan', 'Lurah')->first();
+        $profileDesa = ProfilDesa::first();
+
+        return view('welcome', compact('aparat', 'penduduk', 'berita', 'profileDesa', 'lurah'));
     }
 
     public function profile()

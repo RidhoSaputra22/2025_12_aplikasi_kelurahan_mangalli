@@ -22,15 +22,15 @@ return new class extends Migration
 
         DB::table('aparatur_desas')->insert([
             [
-                'nama' => 'Kepala Desa',
-                'jabatan' => 'Kepala Desa',
+                'nama' => 'Farizah Latief, HS. S.Stp',
+                'jabatan' => 'Lurah',
                 'foto' => 'default-user.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'Sekretaris Desa',
-                'jabatan' => 'Sekretaris Desa',
+                'nama' => 'Sekretaris Lurah',
+                'jabatan' => 'Sekretaris Lurah',
                 'foto' => 'default-user.jpg',
                 'created_at' => now(),
                 'updated_at' => now(),

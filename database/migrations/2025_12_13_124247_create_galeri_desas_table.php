@@ -24,67 +24,67 @@ return new class extends Migration
 
         DB::table('galeri_desas')->insert([
             [
-                'judul' => 'Gotong Royong Membersihkan Lingkungan Desa',
-                'deskripsi' => 'Kegiatan gotong royong warga membersihkan lingkungan desa.',
-                'file' => 'banner-1.jpeg',
+                'judul' => 'Rabu Sehat',
+                'deskripsi' => 'Kegiatan senam bersama yang diikuti oleh warga sebagai upaya meningkatkan kesehatan dan kebugaran jasmani.',
+                'file' => 'kegiatan-1.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'Kerja Bakti Jumat Bersih',
-                'deskripsi' => 'Warga desa melakukan kerja bakti rutin setiap hari Jumat.',
-                'file' => 'banner-2.jpeg',
+                'judul' => 'Kegiatan Mengaji Bersama Warga',
+                'deskripsi' => 'Kegiatan mengaji bersama yang melibatkan warga untuk memperdalam pengetahuan agama dan mempererat tali silaturahmi.',
+                'file' => 'kegiatan-2.jpeg',
+                'type' => TypeFileEnum::IMAGE,
+            ],
+
+
+
+            [
+                'judul' => 'Seminar Program Kerja KKN Tematik',
+                'deskripsi' => 'Pelaksanaan seminar program kerja KKN Tematik Angkatan 59 Universitas Bosowa bersama masyarakat dan aparat setempat sebagai sarana pemaparan rencana kegiatan serta penyerapan aspirasi warga.',
+                'file' => 'kegiatan-8.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'Video Kerja Bakti',
-                'deskripsi' => 'Dokumentasi video kerja bakti warga.',
-                'file' => 'video-kerja-bakti.mp4',
-                'type' => TypeFileEnum::VIDEO,
-            ],
-            [
-                'judul' => 'Musyawarah Desa',
-                'deskripsi' => 'Rapat musyawarah desa membahas pembangunan.',
-                'file' => 'banner-3.jpeg',
+                'judul' => 'Penyerahan Dokumen Program Kerja KKN',
+                'deskripsi' => 'Kegiatan penyerahan dokumen program kerja KKN Tematik secara resmi kepada perwakilan kelurahan sebagai bentuk administrasi dan legalitas pelaksanaan kegiatan.',
+                'file' => 'kegiatan-9.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'Pelatihan UMKM Desa',
-                'deskripsi' => 'Pelatihan pengembangan UMKM bagi warga desa.',
-                'file' => 'banner-4.jpeg',
+                'judul' => 'Seminar Program Kerja KKN Tematik',
+                'deskripsi' => 'Pelaksanaan seminar program kerja KKN Tematik Angkatan 59 Universitas Bosowa bersama masyarakat dan aparat setempat sebagai sarana pemaparan rencana kegiatan serta penyerapan aspirasi warga.',
+                'file' => 'kegiatan-10.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'Video Musyawarah Desa',
-                'deskripsi' => 'Rekaman kegiatan musyawarah desa.',
-                'file' => 'video-musyawarah.mp4',
-                'type' => TypeFileEnum::VIDEO,
-            ],
-            [
-                'judul' => 'Peringatan Hari Kemerdekaan',
-                'deskripsi' => 'Perayaan HUT RI di lingkungan desa.',
-                'file' => 'banner-5.jpeg',
+                'judul' => 'Edukasi Pemilahan Sampah Sejak Dini',
+                'deskripsi' => 'Kegiatan edukasi lingkungan kepada siswa sekolah dasar mengenai pemilahan sampah organik dan non-organik guna menumbuhkan kesadaran menjaga kebersihan sejak usia dini.',
+                'file' => 'kegiatan-11.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'TEST VIDEO KEGIATAN DESA',
-                'deskripsi' => 'Video dokumentasi kegiatan desa.',
-                'file' => '01KCC3HVT3GCMV1J3DRXVSS7TZ.mp4',
-                'type' => TypeFileEnum::VIDEO,
+                'judul' => 'Seminar Hasil Program Kerja KKN Tematik',
+                'deskripsi' => 'Dokumentasi seminar hasil program kerja KKN Tematik Angkatan 59 Universitas Bosowa yang diselenggarakan di Aula Kelurahan Mangalli sebagai bentuk pertanggungjawaban dan evaluasi kegiatan kepada masyarakat dan aparat kelurahan.s',
+                'file' => 'kegiatan-12.jpeg',
+                'type' => TypeFileEnum::IMAGE,
             ],
 
             [
-                'judul' => 'Kegiatan Posyandu',
-                'deskripsi' => 'Pelayanan kesehatan ibu dan anak di desa.',
-                'file' => 'banner-6.jpeg',
+                'judul' => 'Event PKK Kelurahan Mangalli',
+                'deskripsi' => 'Kegiatan yang diselenggarakan oleh PKK Kelurahan Mangalli untuk memberdayakan dan meningkatkan kesejahteraan masyarakat melalui berbagai program dan kegiatan sosial.',
+                'file' => 'pkkevent.jpeg',
                 'type' => TypeFileEnum::IMAGE,
             ],
             [
-                'judul' => 'Video Peringatan HUT RI',
-                'deskripsi' => 'Video lomba dan hiburan HUT RI.',
-                'file' => 'video-hut-ri.mp4',
-                'type' => TypeFileEnum::VIDEO,
+                'judul' => 'Event PKK Kelurahan Mangalli',
+                'deskripsi' => 'Kegiatan yang diselenggarakan oleh PKK Kelurahan Mangalli untuk memberdayakan dan meningkatkan kesejahteraan masyarakat melalui berbagai program dan kegiatan sosial.',
+                'file' => 'pkkevent-1.jpeg',
+                'type' => TypeFileEnum::IMAGE,
             ],
         ]);
+
+
+
     }
 
     /**

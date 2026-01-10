@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="{{ Storage::url('banner-2.jpeg') }}" alt="kantor " class="object-cover w-full h-full">
+                    <img src="{{ Storage::url('banner-5.png') }}" alt="kantor " class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                     </div>
                     <div class="absolute inset-0 w-full h-full px-6 md:px-10 lg:px-40">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="relative w-full h-full swiper-slide">
-                    <img src="{{ Storage::url('banner-3.jpeg') }}" alt="salah satu bangunan di "
+                    <img src="{{ Storage::url('banner-6.png') }}" alt="salah satu bangunan di "
                         class="object-cover w-full h-full">
                     <div class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
                     </div>
@@ -114,95 +114,20 @@
                         <div class="space-y-5 text-center divide-y divide-slate-200 lg:text-left description">
                             <div class="pt-5 space-y-1">
                                 <h6 class="text-xl font-semibold">
-                                    Farizah Latief, HS. S.Stp
+                                    {{ $lurah->nama }}
                                 </h6>
                                 <p class="text-lg font-light">
                                     lurah kelurahan mangalli
                                 </p>
                             </div>
-                            <p class="text-xl font-light leading-relaxed">
-                                Website ini hadir sebagai wujud transformasi Kelurahan Mangalli menjadi desa yang mampu
-                                memanfaatkan teknologi informasi dan komunikasi, terintegrasi ke dalam sistem online.
-                                Keterbukaan informasi publik dan kegiatan perekonomian di desa, guna mewujudkan Desa
-                                Paccekke sebagai desa wisata yang berkelanjutan, adaptasi dan mitigasi terhadap perubahan
-                                iklim serta menjadi desa yang mandiri.
-                            </p>
+                            <div class="text-xl font-light leading-relaxed">
+                                {!! $profileDesa->sambutan !!}
+                            </div>
                         </div>
                     </div>
                     <div class="flex justify-center lg:order-2 content">
                         <img src="{{ Storage::url('default-user.jpg') }}" class="w-96 h-96 rounded-full bg-right"
                             alt="lurah-kelurahan-tuwung">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class=" relative bg-primary">
-        <div class="px-6 md:px-10">
-            <div class="max-w-7xl py-32 mx-auto text-white ">
-
-                <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-10">
-                    <div class=" space-y-5   ">
-                        <h3 class=" text-4xl font-bold text-center lg:text-left">
-                            Visi dan Misi Kelurahan Mangalli
-                            <hr class="my-2 border-t-3 border-white w-24 lg:mx-0 mx-auto">
-                        </h3>
-                        <div class="space-y-5 text-center  lg:text-left description">
-                            <div class="pt-5 space-y-1">
-                                <h6 class="text-xl font-semibold">
-                                    Visi
-                                </h6>
-                                <p class="text-lg font-light">
-
-                                </p>
-                            </div>
-                            <div class="text-xl font-light leading-relaxed text-justify">
-                                {!! $profileDesa->visi !!}
-                            </div>
-                        </div>
-                        <div class="space-y-5 text-center  lg:text-left description">
-                            <div class="pt-5 space-y-1">
-                                <h6 class="text-xl font-semibold">
-                                    Misi
-                                </h6>
-                                <p class="text-lg font-light">
-
-                                </p>
-                            </div>
-                            <div class="text-xl font-light leading-relaxed">
-                                {!! $profileDesa->misi !!}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative  h-100 ">
-                        <div class="hidden lg:block absolute top-0 inset-0 bg-white h-32 aspect-square rounded-sm">
-                        </div>
-                        <div
-                            class="lg:absolute lg:top-10 lg:left-10 lg:inset-0 z-10 swiper visi-misi-swiper h-100 w-100  rounded-sm">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="{{ Storage::url('banner-1.jpeg') }}" alt="visi-misi-1"
-                                        class="object-cover w-full h-full">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ Storage::url('banner-2.jpeg') }}" alt="visi-misi-1"
-                                        class="object-cover w-full h-full">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ Storage::url('banner-3.jpeg') }}" alt="visi-misi-1"
-                                        class="object-cover w-full h-full">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="{{ Storage::url('banner-4.jpeg') }}" alt="visi-misi-1"
-                                        class="object-cover w-full h-full">
-                                </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-
-                        </div>
-
-
                     </div>
                 </div>
             </div>

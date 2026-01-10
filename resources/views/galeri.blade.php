@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="min-h-screen">
+    <section class="min-h-screen py-14">
         <div class="m-24 space-y-14">
             <h3 class="text-4xl font-bold text-center text-primary lg:text-left">
                 Kegiatan Kelurahan Mangalli
